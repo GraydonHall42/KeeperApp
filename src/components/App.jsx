@@ -1,30 +1,18 @@
 import React from "react";
-import Header from "./Header.jsx"
-import NoteCard from "./Note.jsx"
-import Footer from "./Footer.jsx"
-import Notes from "../notes.js"
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import CreateArea from "./CreateArea";
 
-
-function createNote(Note){
-    return (
-        <NoteCard 
-            key = {Note.key}
-            title = {Note.title}
-            content = {Note.content}
-        />
-    );
-}
-
-
-//function to render all of our components together. 
-function App(){
-    return(
-        <div>
-            <Header />
-            {Notes.map(createNote)}
-            <Footer />
-        </div>
-    );
+function App() {
+  return (
+    <div>
+      <Header />
+      <CreateArea />
+      <Note key={1} title="Note title" content="Note content" />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
